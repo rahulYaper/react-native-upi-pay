@@ -1,5 +1,6 @@
 
 # react-native-upi-pay
+react-native-upi is a plugin to integrate the UPI payment interface made by NPCI from your react native apps. This plugin allows you to enable peer to peer payments via UPI in your react native apps. Linking specs have been followed as per this doc
 
 ## Getting started
 
@@ -54,15 +55,14 @@ export default class App extends Component{
         }
     }
     render(){
-        console.log("count")
         that=this;
         function floo(paymentApp){
             RNUpiPayment.initializePayment({
-                vpa: '135starmoon@okicici', 
-                payeeName: 'Binkita Tiwari',
-                amount: '1',
-                transactionNote:'Testing Upi',
-                transactionRef: 'aasf-332-aoei-fn'
+                vpa: 'something@bank',  		//your upi address like 12345464896@okhdfcbank
+                payeeName: ' abc',   			// payee name 
+                amount: '1',				//amount
+                transactionNote:'Testing Upi',		//note of transaction
+                transactionRef: 'aasf-332-aoei-fn'	//some refs to aknowledge the transaction
             },paymentApp,successCallback,failureCallback);
         }
         function failureCallback(data){
@@ -94,7 +94,7 @@ export default class App extends Component{
             }
         }
         function successCallback(data){
-            //nothing happened here using Google Pay
+            //
             console.log(data);
             that.setState({Status:"SUCCESS"});
             that.setState({txnId:data['txnId']});
@@ -129,4 +129,5 @@ export default class App extends Component{
 // TODO: What to do with the module?
 RNReactNativeUpiPay;
 ```
-  
+  ##insipiration 
+  ` This liabrary is inspired by react-native-upi-payments.
