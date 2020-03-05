@@ -1,4 +1,4 @@
-package com.upi.pay;
+package com.upiPay;
 
 import android.app.Activity;
 import android.content.Context;
